@@ -1,6 +1,7 @@
 import '@mantine/core/styles.css';
 
-import { AppShell, Burger, Card, createTheme, MantineProvider, rem } from '@mantine/core';
+import { AppShell, Burger, Image, createTheme, Group, MantineProvider, rem } from '@mantine/core';
+import BrainLogo from '/brain.svg';
 import { useDisclosure } from '@mantine/hooks';
 
 const theme = createTheme({
@@ -60,13 +61,20 @@ function App() {
         padding="md"
       >
         <AppShell.Header>
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <div>Logo</div>
+          <Group h="100%" px="md">
+            <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+            <Image src={BrainLogo} alt="Logo" h={30} />
+          </Group>
         </AppShell.Header>
 
-        <AppShell.Navbar p="md">soon</AppShell.Navbar>
+        <AppShell.Navbar p="md">
+          <div>📁 File Tree Coming Soon…</div>
+        </AppShell.Navbar>
 
-        <AppShell.Main>main</AppShell.Main>
+        <AppShell.Main>
+          <h1>Welcome to Optifile</h1>
+          <p>This is your dark-themed layout with logo + sidebar + responsive nav.</p>
+        </AppShell.Main>
       </AppShell>
     </MantineProvider>
   );
